@@ -7,14 +7,14 @@
         "client": "mongo",
         "srv": false,
         "uri": "${process.env.DATABASE_URI || ''}",
-        "host": "${process.env.DATABASE_HOST || 'ds135796.mlab.com'}",
-        "port": "${process.env.DATABASE_PORT || '35796'}",
-        "database": "${process.env.DATABASE_NAME || 'cscpharmaen'}",
-        "username": "${process.env.DATABASE_USERNAME || 'cscpharma'}",
-        "password": "${process.env.DATABASE_PASSWORD || 'fuckoff11'}"
+        "host": "${process.env.DATABASE_HOST || ''}",
+        "port": "${process.env.DATABASE_PORT || ''}",
+        "database": "${process.env.DATABASE_NAME || ''}",
+        "username": "${process.env.DATABASE_USERNAME || ''}",
+        "password": "${process.env.DATABASE_PASSWORD || ''}"
       },
       "options": {
-        "authenticationDatabase": "${process.env.DATABASE_NAME || 'cscpharmaen'}",
+        "authenticationDatabase": "${process.env.DATABASE_NAME || ''}",
         "ssl": false
       }
     }
