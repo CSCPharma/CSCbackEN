@@ -1,0 +1,149 @@
+{
+  "connection": "default",
+  "collectionName": "locale",
+  "info": {
+    "name": "locale",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "ourProducts": {
+      "default": "",
+      "type": "string"
+    },
+    "allProducts": {
+      "default": "",
+      "type": "string"
+    },
+    "ourBenefitsTitle": {
+      "default": "",
+      "type": "string"
+    },
+    "ourBenefitsText": {
+      "default": "",
+      "type": "text"
+    },
+    "ourPartners": {
+      "default": "",
+      "type": "string"
+    },
+    "vacancies": {
+      "default": "",
+      "type": "string"
+    },
+    "catalog": {
+      "default": "",
+      "type": "string"
+    },
+    "aboutUs": {
+      "default": "",
+      "type": "string"
+    },
+    "mainPage": {
+      "default": "",
+      "type": "string"
+    },
+    "contacts": {
+      "default": "",
+      "type": "string"
+    },
+    "copyright": {
+      "default": "",
+      "type": "string"
+    },
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "contactFormTitle": {
+      "default": "",
+      "type": "string"
+    },
+    "contactReationTitle": {
+      "default": "",
+      "type": "string"
+    },
+    "contactReactionPhone": {
+      "default": "",
+      "type": "string"
+    },
+    "contactReactionAddress": {
+      "default": "",
+      "type": "string"
+    },
+    "contactReactionMail": {
+      "default": "",
+      "type": "email"
+    },
+    "contactReationText": {
+      "default": "",
+      "type": "text"
+    },
+    "catalogContraindications": {
+      "default": "",
+      "type": "text"
+    },
+    "catalogDiffForms": {
+      "default": "",
+      "type": "string"
+    },
+    "readMore": {
+      "default": "",
+      "type": "string"
+    },
+    "readAlso": {
+      "default": "",
+      "type": "string"
+    },
+    "gallery": {
+      "default": "",
+      "type": "string"
+    },
+    "catalogActiveIngredient": {
+      "default": "",
+      "type": "string"
+    },
+    "catalogDosageForm": {
+      "default": "",
+      "type": "string"
+    },
+    "catalogManufacturer": {
+      "default": "",
+      "type": "string"
+    },
+    "catalogLimitedTitle": {
+      "default": "",
+      "type": "string"
+    },
+    "catalogLimitedText": {
+      "default": "",
+      "type": "text"
+    },
+    "yes": {
+      "default": "",
+      "type": "string"
+    },
+    "no": {
+      "default": "",
+      "type": "string"
+    },
+    "catalogOtherWebsite": {
+      "default": "",
+      "type": "string"
+    },
+    "catalogRecipe": {
+      "default": "",
+      "type": "string"
+    },
+    "catalogWhereBuy": {
+      "default": "",
+      "type": "string"
+    },
+    "catalogAboutManufacturer": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

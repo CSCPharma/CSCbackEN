@@ -1,0 +1,53 @@
+{
+  "connection": "default",
+  "collectionName": "contact",
+  "info": {
+    "name": "contact",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "phone": {
+      "default": "",
+      "type": "string"
+    },
+    "address": {
+      "default": "",
+      "type": "string"
+    },
+    "email": {
+      "default": "",
+      "type": "string"
+    },
+    "workTime": {
+      "default": "",
+      "type": "string"
+    },
+    "mapMarker": {
+      "default": "",
+      "type": "json"
+    },
+    "title": {
+      "default": "",
+      "type": "string"
+    },
+    "itemsOrder": {
+      "default": "",
+      "type": "string"
+    },
+    "title_en": {
+      "default": "",
+      "type": "string"
+    },
+    "address_en": {
+      "default": "",
+      "type": "string"
+    },
+    "workTime_en": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

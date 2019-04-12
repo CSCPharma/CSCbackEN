@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    image: strapi/strapi
+    command: npm run start
+    ports:
+      - 80:80
+    volu8mes:
+      - ./CSCback:/usr/src/api/CSCback
+      #- /usr/src/api/strapi-app/node_modules
+
+    restart: always

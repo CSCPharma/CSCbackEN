@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "benefit",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "title_en": {
+      "default": "",
+      "type": "string"
+    },
+    "description_en": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}

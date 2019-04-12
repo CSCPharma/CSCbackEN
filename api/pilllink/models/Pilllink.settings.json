@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "pilllink",
+  "info": {
+    "name": "pilllink",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "href": {
+      "default": "",
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "pill": {
+      "model": "pill",
+      "via": "pilllink"
+    },
+    "pharmacy": {
+      "model": "pharmacy",
+      "via": "pilllink"
+    }
+  }
+}

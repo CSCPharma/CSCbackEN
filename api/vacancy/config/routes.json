@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/vacancies",
+      "handler": "Vacancy.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vacancies/count",
+      "handler": "Vacancy.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vacancies/:_id",
+      "handler": "Vacancy.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/vacancies",
+      "handler": "Vacancy.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vacancies/:_id",
+      "handler": "Vacancy.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/vacancies/:_id",
+      "handler": "Vacancy.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

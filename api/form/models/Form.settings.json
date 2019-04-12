@@ -1,0 +1,163 @@
+{
+  "connection": "default",
+  "collectionName": "form",
+  "info": {
+    "name": "form",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "type": "string"
+    },
+    "slug": {
+      "default": "",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "pill": {
+      "model": "pill",
+      "via": "forms"
+    },
+    "img": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "recipe": {
+      "default": false,
+      "type": "boolean"
+    },
+    "nepatentovannoeNaimenovanie": {
+      "default": "",
+      "type": "string"
+    },
+    "lekarstvennayaForma": {
+      "default": "",
+      "type": "string"
+    },
+    "sostav": {
+      "default": "",
+      "type": "text"
+    },
+    "opisanie": {
+      "default": "",
+      "type": "text"
+    },
+    "farmakoterapevticheskayaGruppa": {
+      "default": "",
+      "type": "text"
+    },
+    "kodATX": {
+      "default": "",
+      "type": "string"
+    },
+    "farmakodinamika": {
+      "default": "",
+      "type": "text"
+    },
+    "farmakokinetika": {
+      "default": "",
+      "type": "text"
+    },
+    "pokazaniya": {
+      "default": "",
+      "type": "text"
+    },
+    "protivopokazaniya": {
+      "default": "",
+      "type": "text"
+    },
+    "meryPredostorozhnosti": {
+      "default": "",
+      "type": "text"
+    },
+    "priBeremennosti": {
+      "default": "",
+      "type": "text"
+    },
+    "sposobPrimeneniyaDozy": {
+      "default": "",
+      "type": "text"
+    },
+    "peredozirovka": {
+      "default": "",
+      "type": "text"
+    },
+    "pobochnoeDeystvie": {
+      "default": "",
+      "type": "text"
+    },
+    "vzaimodeystvieSDrugimiPreparatami": {
+      "default": "",
+      "type": "text"
+    },
+    "osobyeUkazaniya": {
+      "default": "",
+      "type": "text"
+    },
+    "vliyanieNaAvtomobil": {
+      "default": "",
+      "type": "text"
+    },
+    "formaVypuska": {
+      "default": "",
+      "type": "text"
+    },
+    "srokGodnosti": {
+      "default": "",
+      "type": "text"
+    },
+    "usloviyaHraneniya": {
+      "default": "",
+      "type": "text"
+    },
+    "vladelecRegistracionnogoUdostovereniya": {
+      "default": "",
+      "type": "text"
+    },
+    "proizvoditel": {
+      "default": "",
+      "type": "text"
+    },
+    "upakovkaKontrol": {
+      "default": "",
+      "type": "text"
+    },
+    "adresPretenziy": {
+      "default": "",
+      "type": "text"
+    },
+    "torgovoeNazvanie": {
+      "default": "",
+      "type": "string"
+    },
+    "title_en": {
+      "default": "",
+      "type": "string"
+    },
+    "description_en": {
+      "default": "",
+      "type": "text"
+    },
+    "torgovoeNazvanie_en": {
+      "default": "",
+      "type": "string"
+    },
+    "nepatentovannoeNaimenovanie_en": {
+      "default": "",
+      "type": "string"
+    },
+    "lekarstvennayaForma_en": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

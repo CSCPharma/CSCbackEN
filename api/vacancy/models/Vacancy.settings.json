@@ -1,0 +1,53 @@
+{
+  "connection": "default",
+  "collectionName": "vacancy",
+  "info": {
+    "name": "vacancy",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "content": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "city": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "default": "",
+      "type": "string"
+    },
+    "title_en": {
+      "default": "",
+      "type": "string"
+    },
+    "description_en": {
+      "default": "",
+      "type": "text"
+    },
+    "content_en": {
+      "default": "",
+      "type": "text"
+    },
+    "city_en": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

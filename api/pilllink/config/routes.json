@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/pilllinks",
+      "handler": "Pilllink.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pilllinks/count",
+      "handler": "Pilllink.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pilllinks/:_id",
+      "handler": "Pilllink.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/pilllinks",
+      "handler": "Pilllink.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/pilllinks/:_id",
+      "handler": "Pilllink.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/pilllinks/:_id",
+      "handler": "Pilllink.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

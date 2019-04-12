@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/locales",
+      "handler": "Locale.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/locales/count",
+      "handler": "Locale.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/locales/:_id",
+      "handler": "Locale.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/locales",
+      "handler": "Locale.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/locales/:_id",
+      "handler": "Locale.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/locales/:_id",
+      "handler": "Locale.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

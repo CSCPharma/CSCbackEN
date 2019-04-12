@@ -1,0 +1,59 @@
+{
+  "connection": "default",
+  "collectionName": "pill",
+  "info": {
+    "name": "pill",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "manufacturer": {
+      "model": "manufacturer",
+      "via": "pills"
+    },
+    "forms": {
+      "collection": "form",
+      "via": "pill"
+    },
+    "Articles": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "pilllink": {
+      "collection": "pilllink",
+      "via": "pill"
+    },
+    "otherwebsitelink": {
+      "default": "",
+      "type": "string"
+    },
+    "title_en": {
+      "default": "",
+      "type": "string"
+    },
+    "description_en": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}

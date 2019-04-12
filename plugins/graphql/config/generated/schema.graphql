@@ -1,0 +1,2110 @@
+type Benefit {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  title: String
+  description: String
+  img: UploadFile
+  title_en: String
+  description_en: String
+}
+
+type BenefitAggregator {
+  count: Int
+}
+
+type BenefitConnection {
+  values: [Benefit]
+  groupBy: BenefitGroupBy
+  aggregate: BenefitAggregator
+}
+
+type BenefitConnection_id {
+  key: ID
+  connection: BenefitConnection
+}
+
+type BenefitConnectionCreatedAt {
+  key: DateTime
+  connection: BenefitConnection
+}
+
+type BenefitConnectionDescription {
+  key: String
+  connection: BenefitConnection
+}
+
+type BenefitConnectionDescription_en {
+  key: String
+  connection: BenefitConnection
+}
+
+type BenefitConnectionImg {
+  key: ID
+  connection: BenefitConnection
+}
+
+type BenefitConnectionTitle {
+  key: String
+  connection: BenefitConnection
+}
+
+type BenefitConnectionTitle_en {
+  key: String
+  connection: BenefitConnection
+}
+
+type BenefitConnectionUpdatedAt {
+  key: DateTime
+  connection: BenefitConnection
+}
+
+type BenefitGroupBy {
+  _id: [BenefitConnection_id]
+  createdAt: [BenefitConnectionCreatedAt]
+  updatedAt: [BenefitConnectionUpdatedAt]
+  title: [BenefitConnectionTitle]
+  description: [BenefitConnectionDescription]
+  img: [BenefitConnectionImg]
+  title_en: [BenefitConnectionTitle_en]
+  description_en: [BenefitConnectionDescription_en]
+}
+
+input BenefitInput {
+  title: String
+  description: String
+  img: ID
+  title_en: String
+  description_en: String
+}
+
+type Contact {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  phone: String
+  address: String
+  email: String
+  workTime: String
+  mapMarker: JSON
+  title: String
+  itemsOrder: String
+  title_en: String
+  address_en: String
+  workTime_en: String
+}
+
+type ContactAggregator {
+  count: Int
+}
+
+type ContactConnection {
+  values: [Contact]
+  groupBy: ContactGroupBy
+  aggregate: ContactAggregator
+}
+
+type ContactConnection_id {
+  key: ID
+  connection: ContactConnection
+}
+
+type ContactConnectionAddress {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionAddress_en {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionCreatedAt {
+  key: DateTime
+  connection: ContactConnection
+}
+
+type ContactConnectionEmail {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionItemsOrder {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionMapMarker {
+  key: JSON
+  connection: ContactConnection
+}
+
+type ContactConnectionPhone {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionTitle {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionTitle_en {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionUpdatedAt {
+  key: DateTime
+  connection: ContactConnection
+}
+
+type ContactConnectionWorkTime {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionWorkTime_en {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactGroupBy {
+  _id: [ContactConnection_id]
+  createdAt: [ContactConnectionCreatedAt]
+  updatedAt: [ContactConnectionUpdatedAt]
+  phone: [ContactConnectionPhone]
+  address: [ContactConnectionAddress]
+  email: [ContactConnectionEmail]
+  workTime: [ContactConnectionWorkTime]
+  mapMarker: [ContactConnectionMapMarker]
+  title: [ContactConnectionTitle]
+  itemsOrder: [ContactConnectionItemsOrder]
+  title_en: [ContactConnectionTitle_en]
+  address_en: [ContactConnectionAddress_en]
+  workTime_en: [ContactConnectionWorkTime_en]
+}
+
+input ContactInput {
+  phone: String
+  address: String
+  email: String
+  workTime: String
+  mapMarker: JSON
+  title: String
+  itemsOrder: String
+  title_en: String
+  address_en: String
+  workTime_en: String
+}
+
+input createBenefitInput {
+  data: BenefitInput
+}
+
+type createBenefitPayload {
+  benefit: Benefit
+}
+
+input createContactInput {
+  data: ContactInput
+}
+
+type createContactPayload {
+  contact: Contact
+}
+
+input createFormInput {
+  data: FormInput
+}
+
+type createFormPayload {
+  form: Form
+}
+
+input createLocaleInput {
+  data: LocaleInput
+}
+
+type createLocalePayload {
+  locale: Locale
+}
+
+input createManufacturerInput {
+  data: ManufacturerInput
+}
+
+type createManufacturerPayload {
+  manufacturer: Manufacturer
+}
+
+input createPagesInput {
+  data: PagesInput
+}
+
+type createPagesPayload {
+  page: Pages
+}
+
+input createPharmacyInput {
+  data: PharmacyInput
+}
+
+type createPharmacyPayload {
+  pharmacy: Pharmacy
+}
+
+input createPillInput {
+  data: PillInput
+}
+
+input createPilllinkInput {
+  data: PilllinkInput
+}
+
+type createPilllinkPayload {
+  pilllink: Pilllink
+}
+
+type createPillPayload {
+  pill: Pill
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+input createVacancyInput {
+  data: VacancyInput
+}
+
+type createVacancyPayload {
+  vacancy: Vacancy
+}
+
+"""
+The `DateTime` scalar represents a date and time following the ISO 8601 standard
+"""
+scalar DateTime
+
+input deleteBenefitInput {
+  where: InputID
+}
+
+type deleteBenefitPayload {
+  benefit: Benefit
+}
+
+input deleteContactInput {
+  where: InputID
+}
+
+type deleteContactPayload {
+  contact: Contact
+}
+
+input deleteFormInput {
+  where: InputID
+}
+
+type deleteFormPayload {
+  form: Form
+}
+
+input deleteLocaleInput {
+  where: InputID
+}
+
+type deleteLocalePayload {
+  locale: Locale
+}
+
+input deleteManufacturerInput {
+  where: InputID
+}
+
+type deleteManufacturerPayload {
+  manufacturer: Manufacturer
+}
+
+input deletePagesInput {
+  where: InputID
+}
+
+type deletePagesPayload {
+  page: Pages
+}
+
+input deletePharmacyInput {
+  where: InputID
+}
+
+type deletePharmacyPayload {
+  pharmacy: Pharmacy
+}
+
+input deletePillInput {
+  where: InputID
+}
+
+input deletePilllinkInput {
+  where: InputID
+}
+
+type deletePilllinkPayload {
+  pilllink: Pilllink
+}
+
+type deletePillPayload {
+  pill: Pill
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+input deleteVacancyInput {
+  where: InputID
+}
+
+type deleteVacancyPayload {
+  vacancy: Vacancy
+}
+
+input FileInput {
+  name: String!
+  hash: String!
+  sha256: String
+  ext: String
+  mime: String!
+  size: String!
+  url: String!
+  provider: String!
+  public_id: String
+  related: [ID]
+}
+
+type Form {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  title: String
+  slug: String
+  description: String
+  pill: Pill
+  recipe: Boolean
+  nepatentovannoeNaimenovanie: String
+  lekarstvennayaForma: String
+  sostav: String
+  opisanie: String
+  farmakoterapevticheskayaGruppa: String
+  kodATX: String
+  farmakodinamika: String
+  farmakokinetika: String
+  pokazaniya: String
+  protivopokazaniya: String
+  meryPredostorozhnosti: String
+  priBeremennosti: String
+  sposobPrimeneniyaDozy: String
+  peredozirovka: String
+  pobochnoeDeystvie: String
+  vzaimodeystvieSDrugimiPreparatami: String
+  osobyeUkazaniya: String
+  vliyanieNaAvtomobil: String
+  formaVypuska: String
+  srokGodnosti: String
+  usloviyaHraneniya: String
+  vladelecRegistracionnogoUdostovereniya: String
+  proizvoditel: String
+  upakovkaKontrol: String
+  adresPretenziy: String
+  torgovoeNazvanie: String
+  title_en: String
+  description_en: String
+  torgovoeNazvanie_en: String
+  nepatentovannoeNaimenovanie_en: String
+  lekarstvennayaForma_en: String
+  img(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+}
+
+type FormAggregator {
+  count: Int
+}
+
+type FormConnection {
+  values: [Form]
+  groupBy: FormGroupBy
+  aggregate: FormAggregator
+}
+
+type FormConnection_id {
+  key: ID
+  connection: FormConnection
+}
+
+type FormConnectionAdresPretenziy {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionCreatedAt {
+  key: DateTime
+  connection: FormConnection
+}
+
+type FormConnectionDescription {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionDescription_en {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionFarmakodinamika {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionFarmakokinetika {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionFarmakoterapevticheskayaGruppa {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionFormaVypuska {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionKodATX {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionLekarstvennayaForma {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionLekarstvennayaForma_en {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionMeryPredostorozhnosti {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionNepatentovannoeNaimenovanie {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionNepatentovannoeNaimenovanie_en {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionOpisanie {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionOsobyeUkazaniya {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionPeredozirovka {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionPill {
+  key: ID
+  connection: FormConnection
+}
+
+type FormConnectionPobochnoeDeystvie {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionPokazaniya {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionPriBeremennosti {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionProizvoditel {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionProtivopokazaniya {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionRecipe {
+  key: Boolean
+  connection: FormConnection
+}
+
+type FormConnectionSlug {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionSostav {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionSposobPrimeneniyaDozy {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionSrokGodnosti {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionTitle {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionTitle_en {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionTorgovoeNazvanie {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionTorgovoeNazvanie_en {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionUpakovkaKontrol {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionUpdatedAt {
+  key: DateTime
+  connection: FormConnection
+}
+
+type FormConnectionUsloviyaHraneniya {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionVladelecRegistracionnogoUdostovereniya {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionVliyanieNaAvtomobil {
+  key: String
+  connection: FormConnection
+}
+
+type FormConnectionVzaimodeystvieSDrugimiPreparatami {
+  key: String
+  connection: FormConnection
+}
+
+type FormGroupBy {
+  _id: [FormConnection_id]
+  createdAt: [FormConnectionCreatedAt]
+  updatedAt: [FormConnectionUpdatedAt]
+  title: [FormConnectionTitle]
+  slug: [FormConnectionSlug]
+  description: [FormConnectionDescription]
+  pill: [FormConnectionPill]
+  recipe: [FormConnectionRecipe]
+  nepatentovannoeNaimenovanie: [FormConnectionNepatentovannoeNaimenovanie]
+  lekarstvennayaForma: [FormConnectionLekarstvennayaForma]
+  sostav: [FormConnectionSostav]
+  opisanie: [FormConnectionOpisanie]
+  farmakoterapevticheskayaGruppa: [FormConnectionFarmakoterapevticheskayaGruppa]
+  kodATX: [FormConnectionKodATX]
+  farmakodinamika: [FormConnectionFarmakodinamika]
+  farmakokinetika: [FormConnectionFarmakokinetika]
+  pokazaniya: [FormConnectionPokazaniya]
+  protivopokazaniya: [FormConnectionProtivopokazaniya]
+  meryPredostorozhnosti: [FormConnectionMeryPredostorozhnosti]
+  priBeremennosti: [FormConnectionPriBeremennosti]
+  sposobPrimeneniyaDozy: [FormConnectionSposobPrimeneniyaDozy]
+  peredozirovka: [FormConnectionPeredozirovka]
+  pobochnoeDeystvie: [FormConnectionPobochnoeDeystvie]
+  vzaimodeystvieSDrugimiPreparatami: [FormConnectionVzaimodeystvieSDrugimiPreparatami]
+  osobyeUkazaniya: [FormConnectionOsobyeUkazaniya]
+  vliyanieNaAvtomobil: [FormConnectionVliyanieNaAvtomobil]
+  formaVypuska: [FormConnectionFormaVypuska]
+  srokGodnosti: [FormConnectionSrokGodnosti]
+  usloviyaHraneniya: [FormConnectionUsloviyaHraneniya]
+  vladelecRegistracionnogoUdostovereniya: [FormConnectionVladelecRegistracionnogoUdostovereniya]
+  proizvoditel: [FormConnectionProizvoditel]
+  upakovkaKontrol: [FormConnectionUpakovkaKontrol]
+  adresPretenziy: [FormConnectionAdresPretenziy]
+  torgovoeNazvanie: [FormConnectionTorgovoeNazvanie]
+  title_en: [FormConnectionTitle_en]
+  description_en: [FormConnectionDescription_en]
+  torgovoeNazvanie_en: [FormConnectionTorgovoeNazvanie_en]
+  nepatentovannoeNaimenovanie_en: [FormConnectionNepatentovannoeNaimenovanie_en]
+  lekarstvennayaForma_en: [FormConnectionLekarstvennayaForma_en]
+}
+
+input FormInput {
+  title: String
+  slug: String
+  description: String
+  pill: ID
+  img: [ID]
+  recipe: Boolean
+  nepatentovannoeNaimenovanie: String
+  lekarstvennayaForma: String
+  sostav: String
+  opisanie: String
+  farmakoterapevticheskayaGruppa: String
+  kodATX: String
+  farmakodinamika: String
+  farmakokinetika: String
+  pokazaniya: String
+  protivopokazaniya: String
+  meryPredostorozhnosti: String
+  priBeremennosti: String
+  sposobPrimeneniyaDozy: String
+  peredozirovka: String
+  pobochnoeDeystvie: String
+  vzaimodeystvieSDrugimiPreparatami: String
+  osobyeUkazaniya: String
+  vliyanieNaAvtomobil: String
+  formaVypuska: String
+  srokGodnosti: String
+  usloviyaHraneniya: String
+  vladelecRegistracionnogoUdostovereniya: String
+  proizvoditel: String
+  upakovkaKontrol: String
+  adresPretenziy: String
+  torgovoeNazvanie: String
+  title_en: String
+  description_en: String
+  torgovoeNazvanie_en: String
+  nepatentovannoeNaimenovanie_en: String
+  lekarstvennayaForma_en: String
+}
+
+input InputID {
+  id: ID!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type Locale {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  ourProducts: String
+  allProducts: String
+  ourBenefitsTitle: String
+  ourBenefitsText: String
+  ourPartners: String
+  vacancies: String
+  catalog: String
+  aboutUs: String
+  mainPage: String
+  contacts: String
+  copyright: String
+  name: String
+  contactFormTitle: String
+  contactReationTitle: String
+  contactReactionPhone: String
+  contactReactionAddress: String
+  contactReactionMail: String
+  contactReationText: String
+  catalogContraindications: String
+  catalogDiffForms: String
+  readMore: String
+  readAlso: String
+  gallery: String
+  catalogActiveIngredient: String
+  catalogDosageForm: String
+  catalogManufacturer: String
+  catalogLimitedTitle: String
+  catalogLimitedText: String
+  yes: String
+  no: String
+  catalogOtherWebsite: String
+  catalogRecipe: String
+  catalogWhereBuy: String
+  catalogAboutManufacturer: String
+}
+
+type LocaleAggregator {
+  count: Int
+}
+
+type LocaleConnection {
+  values: [Locale]
+  groupBy: LocaleGroupBy
+  aggregate: LocaleAggregator
+}
+
+type LocaleConnection_id {
+  key: ID
+  connection: LocaleConnection
+}
+
+type LocaleConnectionAboutUs {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionAllProducts {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalog {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogAboutManufacturer {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogActiveIngredient {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogContraindications {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogDiffForms {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogDosageForm {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogLimitedText {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogLimitedTitle {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogManufacturer {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogOtherWebsite {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogRecipe {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCatalogWhereBuy {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionContactFormTitle {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionContactReactionAddress {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionContactReactionMail {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionContactReactionPhone {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionContactReationText {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionContactReationTitle {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionContacts {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCopyright {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionCreatedAt {
+  key: DateTime
+  connection: LocaleConnection
+}
+
+type LocaleConnectionGallery {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionMainPage {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionName {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionNo {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionOurBenefitsText {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionOurBenefitsTitle {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionOurPartners {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionOurProducts {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionReadAlso {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionReadMore {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionUpdatedAt {
+  key: DateTime
+  connection: LocaleConnection
+}
+
+type LocaleConnectionVacancies {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleConnectionYes {
+  key: String
+  connection: LocaleConnection
+}
+
+type LocaleGroupBy {
+  _id: [LocaleConnection_id]
+  createdAt: [LocaleConnectionCreatedAt]
+  updatedAt: [LocaleConnectionUpdatedAt]
+  ourProducts: [LocaleConnectionOurProducts]
+  allProducts: [LocaleConnectionAllProducts]
+  ourBenefitsTitle: [LocaleConnectionOurBenefitsTitle]
+  ourBenefitsText: [LocaleConnectionOurBenefitsText]
+  ourPartners: [LocaleConnectionOurPartners]
+  vacancies: [LocaleConnectionVacancies]
+  catalog: [LocaleConnectionCatalog]
+  aboutUs: [LocaleConnectionAboutUs]
+  mainPage: [LocaleConnectionMainPage]
+  contacts: [LocaleConnectionContacts]
+  copyright: [LocaleConnectionCopyright]
+  name: [LocaleConnectionName]
+  contactFormTitle: [LocaleConnectionContactFormTitle]
+  contactReationTitle: [LocaleConnectionContactReationTitle]
+  contactReactionPhone: [LocaleConnectionContactReactionPhone]
+  contactReactionAddress: [LocaleConnectionContactReactionAddress]
+  contactReactionMail: [LocaleConnectionContactReactionMail]
+  contactReationText: [LocaleConnectionContactReationText]
+  catalogContraindications: [LocaleConnectionCatalogContraindications]
+  catalogDiffForms: [LocaleConnectionCatalogDiffForms]
+  readMore: [LocaleConnectionReadMore]
+  readAlso: [LocaleConnectionReadAlso]
+  gallery: [LocaleConnectionGallery]
+  catalogActiveIngredient: [LocaleConnectionCatalogActiveIngredient]
+  catalogDosageForm: [LocaleConnectionCatalogDosageForm]
+  catalogManufacturer: [LocaleConnectionCatalogManufacturer]
+  catalogLimitedTitle: [LocaleConnectionCatalogLimitedTitle]
+  catalogLimitedText: [LocaleConnectionCatalogLimitedText]
+  yes: [LocaleConnectionYes]
+  no: [LocaleConnectionNo]
+  catalogOtherWebsite: [LocaleConnectionCatalogOtherWebsite]
+  catalogRecipe: [LocaleConnectionCatalogRecipe]
+  catalogWhereBuy: [LocaleConnectionCatalogWhereBuy]
+  catalogAboutManufacturer: [LocaleConnectionCatalogAboutManufacturer]
+}
+
+input LocaleInput {
+  ourProducts: String
+  allProducts: String
+  ourBenefitsTitle: String
+  ourBenefitsText: String
+  ourPartners: String
+  vacancies: String
+  catalog: String
+  aboutUs: String
+  mainPage: String
+  contacts: String
+  copyright: String
+  name: String
+  contactFormTitle: String
+  contactReationTitle: String
+  contactReactionPhone: String
+  contactReactionAddress: String
+  contactReactionMail: String
+  contactReationText: String
+  catalogContraindications: String
+  catalogDiffForms: String
+  readMore: String
+  readAlso: String
+  gallery: String
+  catalogActiveIngredient: String
+  catalogDosageForm: String
+  catalogManufacturer: String
+  catalogLimitedTitle: String
+  catalogLimitedText: String
+  yes: String
+  no: String
+  catalogOtherWebsite: String
+  catalogRecipe: String
+  catalogWhereBuy: String
+  catalogAboutManufacturer: String
+}
+
+type Manufacturer {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  title: String
+  description: String
+  img: UploadFile
+  logo: UploadFile
+  link: String
+  mapMarkers: JSON
+  title_en: String
+  description_en: String
+  pills(sort: String, limit: Int, start: Int, where: JSON): [Pill]
+}
+
+type ManufacturerAggregator {
+  count: Int
+}
+
+type ManufacturerConnection {
+  values: [Manufacturer]
+  groupBy: ManufacturerGroupBy
+  aggregate: ManufacturerAggregator
+}
+
+type ManufacturerConnection_id {
+  key: ID
+  connection: ManufacturerConnection
+}
+
+type ManufacturerConnectionCreatedAt {
+  key: DateTime
+  connection: ManufacturerConnection
+}
+
+type ManufacturerConnectionDescription {
+  key: String
+  connection: ManufacturerConnection
+}
+
+type ManufacturerConnectionDescription_en {
+  key: String
+  connection: ManufacturerConnection
+}
+
+type ManufacturerConnectionImg {
+  key: ID
+  connection: ManufacturerConnection
+}
+
+type ManufacturerConnectionLink {
+  key: String
+  connection: ManufacturerConnection
+}
+
+type ManufacturerConnectionLogo {
+  key: ID
+  connection: ManufacturerConnection
+}
+
+type ManufacturerConnectionMapMarkers {
+  key: JSON
+  connection: ManufacturerConnection
+}
+
+type ManufacturerConnectionTitle {
+  key: String
+  connection: ManufacturerConnection
+}
+
+type ManufacturerConnectionTitle_en {
+  key: String
+  connection: ManufacturerConnection
+}
+
+type ManufacturerConnectionUpdatedAt {
+  key: DateTime
+  connection: ManufacturerConnection
+}
+
+type ManufacturerGroupBy {
+  _id: [ManufacturerConnection_id]
+  createdAt: [ManufacturerConnectionCreatedAt]
+  updatedAt: [ManufacturerConnectionUpdatedAt]
+  title: [ManufacturerConnectionTitle]
+  description: [ManufacturerConnectionDescription]
+  img: [ManufacturerConnectionImg]
+  logo: [ManufacturerConnectionLogo]
+  link: [ManufacturerConnectionLink]
+  mapMarkers: [ManufacturerConnectionMapMarkers]
+  title_en: [ManufacturerConnectionTitle_en]
+  description_en: [ManufacturerConnectionDescription_en]
+}
+
+input ManufacturerInput {
+  title: String
+  description: String
+  img: ID
+  logo: ID
+  pills: [ID]
+  link: String
+  mapMarkers: JSON
+  title_en: String
+  description_en: String
+}
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Benefit | createBenefitPayload | updateBenefitPayload | deleteBenefitPayload | BenefitConnection | BenefitAggregator | BenefitGroupBy | BenefitConnection_id | BenefitConnectionCreatedAt | BenefitConnectionUpdatedAt | BenefitConnectionTitle | BenefitConnectionDescription | BenefitConnectionImg | BenefitConnectionTitle_en | BenefitConnectionDescription_en | Contact | createContactPayload | updateContactPayload | deleteContactPayload | ContactConnection | ContactAggregator | ContactGroupBy | ContactConnection_id | ContactConnectionCreatedAt | ContactConnectionUpdatedAt | ContactConnectionPhone | ContactConnectionAddress | ContactConnectionEmail | ContactConnectionWorkTime | ContactConnectionMapMarker | ContactConnectionTitle | ContactConnectionItemsOrder | ContactConnectionTitle_en | ContactConnectionAddress_en | ContactConnectionWorkTime_en | Form | createFormPayload | updateFormPayload | deleteFormPayload | FormConnection | FormAggregator | FormGroupBy | FormConnection_id | FormConnectionCreatedAt | FormConnectionUpdatedAt | FormConnectionTitle | FormConnectionSlug | FormConnectionDescription | FormConnectionPill | FormConnectionRecipe | FormConnectionNepatentovannoeNaimenovanie | FormConnectionLekarstvennayaForma | FormConnectionSostav | FormConnectionOpisanie | FormConnectionFarmakoterapevticheskayaGruppa | FormConnectionKodATX | FormConnectionFarmakodinamika | FormConnectionFarmakokinetika | FormConnectionPokazaniya | FormConnectionProtivopokazaniya | FormConnectionMeryPredostorozhnosti | FormConnectionPriBeremennosti | FormConnectionSposobPrimeneniyaDozy | FormConnectionPeredozirovka | FormConnectionPobochnoeDeystvie | FormConnectionVzaimodeystvieSDrugimiPreparatami | FormConnectionOsobyeUkazaniya | FormConnectionVliyanieNaAvtomobil | FormConnectionFormaVypuska | FormConnectionSrokGodnosti | FormConnectionUsloviyaHraneniya | FormConnectionVladelecRegistracionnogoUdostovereniya | FormConnectionProizvoditel | FormConnectionUpakovkaKontrol | FormConnectionAdresPretenziy | FormConnectionTorgovoeNazvanie | FormConnectionTitle_en | FormConnectionDescription_en | FormConnectionTorgovoeNazvanie_en | FormConnectionNepatentovannoeNaimenovanie_en | FormConnectionLekarstvennayaForma_en | Locale | createLocalePayload | updateLocalePayload | deleteLocalePayload | LocaleConnection | LocaleAggregator | LocaleGroupBy | LocaleConnection_id | LocaleConnectionCreatedAt | LocaleConnectionUpdatedAt | LocaleConnectionOurProducts | LocaleConnectionAllProducts | LocaleConnectionOurBenefitsTitle | LocaleConnectionOurBenefitsText | LocaleConnectionOurPartners | LocaleConnectionVacancies | LocaleConnectionCatalog | LocaleConnectionAboutUs | LocaleConnectionMainPage | LocaleConnectionContacts | LocaleConnectionCopyright | LocaleConnectionName | LocaleConnectionContactFormTitle | LocaleConnectionContactReationTitle | LocaleConnectionContactReactionPhone | LocaleConnectionContactReactionAddress | LocaleConnectionContactReactionMail | LocaleConnectionContactReationText | LocaleConnectionCatalogContraindications | LocaleConnectionCatalogDiffForms | LocaleConnectionReadMore | LocaleConnectionReadAlso | LocaleConnectionGallery | LocaleConnectionCatalogActiveIngredient | LocaleConnectionCatalogDosageForm | LocaleConnectionCatalogManufacturer | LocaleConnectionCatalogLimitedTitle | LocaleConnectionCatalogLimitedText | LocaleConnectionYes | LocaleConnectionNo | LocaleConnectionCatalogOtherWebsite | LocaleConnectionCatalogRecipe | LocaleConnectionCatalogWhereBuy | LocaleConnectionCatalogAboutManufacturer | Manufacturer | createManufacturerPayload | updateManufacturerPayload | deleteManufacturerPayload | ManufacturerConnection | ManufacturerAggregator | ManufacturerGroupBy | ManufacturerConnection_id | ManufacturerConnectionCreatedAt | ManufacturerConnectionUpdatedAt | ManufacturerConnectionTitle | ManufacturerConnectionDescription | ManufacturerConnectionImg | ManufacturerConnectionLogo | ManufacturerConnectionLink | ManufacturerConnectionMapMarkers | ManufacturerConnectionTitle_en | ManufacturerConnectionDescription_en | Pages | createPagesPayload | updatePagesPayload | deletePagesPayload | PagesConnection | PagesAggregator | PagesAggregatorSum | PagesAggregatorAvg | PagesAggregatorMin | PagesAggregatorMax | PagesGroupBy | PagesConnection_id | PagesConnectionCreatedAt | PagesConnectionUpdatedAt | PagesConnectionTitle | PagesConnectionSlug | PagesConnectionDescription | PagesConnectionIcon | PagesConnectionImg | PagesConnectionContent | PagesConnectionItemsOrder | PagesConnectionTitle_en | PagesConnectionDescription_en | PagesConnectionContent_en | Pharmacy | createPharmacyPayload | updatePharmacyPayload | deletePharmacyPayload | PharmacyConnection | PharmacyAggregator | PharmacyGroupBy | PharmacyConnection_id | PharmacyConnectionCreatedAt | PharmacyConnectionUpdatedAt | PharmacyConnectionName | PharmacyConnectionImg | PharmacyConnectionPilllink | Pill | createPillPayload | updatePillPayload | deletePillPayload | PillConnection | PillAggregator | PillGroupBy | PillConnection_id | PillConnectionCreatedAt | PillConnectionUpdatedAt | PillConnectionTitle | PillConnectionDescription | PillConnectionImg | PillConnectionManufacturer | PillConnectionOtherwebsitelink | PillConnectionTitle_en | PillConnectionDescription_en | Pilllink | createPilllinkPayload | updatePilllinkPayload | deletePilllinkPayload | PilllinkConnection | PilllinkAggregator | PilllinkGroupBy | PilllinkConnection_id | PilllinkConnectionCreatedAt | PilllinkConnectionUpdatedAt | PilllinkConnectionHref | PilllinkConnectionPill | PilllinkConnectionPharmacy | Vacancy | createVacancyPayload | updateVacancyPayload | deleteVacancyPayload | VacancyConnection | VacancyAggregator | VacancyGroupBy | VacancyConnection_id | VacancyConnectionCreatedAt | VacancyConnectionUpdatedAt | VacancyConnectionTitle | VacancyConnectionDescription | VacancyConnectionContent | VacancyConnectionCity | VacancyConnectionSlug | VacancyConnectionTitle_en | VacancyConnectionDescription_en | VacancyConnectionContent_en | VacancyConnectionCity_en | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+
+type Mutation {
+  createBenefit(input: createBenefitInput): createBenefitPayload
+  updateBenefit(input: updateBenefitInput): updateBenefitPayload
+  deleteBenefit(input: deleteBenefitInput): deleteBenefitPayload
+  createContact(input: createContactInput): createContactPayload
+  updateContact(input: updateContactInput): updateContactPayload
+  deleteContact(input: deleteContactInput): deleteContactPayload
+  createForm(input: createFormInput): createFormPayload
+  updateForm(input: updateFormInput): updateFormPayload
+  deleteForm(input: deleteFormInput): deleteFormPayload
+  createLocale(input: createLocaleInput): createLocalePayload
+  updateLocale(input: updateLocaleInput): updateLocalePayload
+  deleteLocale(input: deleteLocaleInput): deleteLocalePayload
+  createManufacturer(input: createManufacturerInput): createManufacturerPayload
+  updateManufacturer(input: updateManufacturerInput): updateManufacturerPayload
+  deleteManufacturer(input: deleteManufacturerInput): deleteManufacturerPayload
+  createPages(input: createPagesInput): createPagesPayload
+  updatePages(input: updatePagesInput): updatePagesPayload
+  deletePages(input: deletePagesInput): deletePagesPayload
+  createPharmacy(input: createPharmacyInput): createPharmacyPayload
+  updatePharmacy(input: updatePharmacyInput): updatePharmacyPayload
+  deletePharmacy(input: deletePharmacyInput): deletePharmacyPayload
+  createPill(input: createPillInput): createPillPayload
+  updatePill(input: updatePillInput): updatePillPayload
+  deletePill(input: deletePillInput): deletePillPayload
+  createPilllink(input: createPilllinkInput): createPilllinkPayload
+  updatePilllink(input: updatePilllinkInput): updatePilllinkPayload
+  deletePilllink(input: deletePilllinkInput): deletePilllinkPayload
+  createVacancy(input: createVacancyInput): createVacancyPayload
+  updateVacancy(input: updateVacancyInput): updateVacancyPayload
+  deleteVacancy(input: deleteVacancyInput): deleteVacancyPayload
+
+  """Create a new role"""
+  createRole(input: createRoleInput): createRolePayload
+
+  """Update an existing role"""
+  updateRole(input: updateRoleInput): updateRolePayload
+
+  """Delete an existing role"""
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+  createUser(input: createUserInput): createUserPayload
+  updateUser(input: updateUserInput): updateUserPayload
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(refId: ID, ref: String, source: String, file: Upload!): UploadFile!
+}
+
+type Pages {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  title: String!
+  slug: String!
+  description: String
+  icon: UploadFile
+  img: UploadFile
+  content: String
+  itemsOrder: Int
+  title_en: String
+  description_en: String
+  content_en: String
+  gallery(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+}
+
+type PagesAggregator {
+  count: Int
+  sum: PagesAggregatorSum
+  avg: PagesAggregatorAvg
+  min: PagesAggregatorMin
+  max: PagesAggregatorMax
+}
+
+type PagesAggregatorAvg {
+  itemsOrder: Float
+}
+
+type PagesAggregatorMax {
+  itemsOrder: Float
+}
+
+type PagesAggregatorMin {
+  itemsOrder: Float
+}
+
+type PagesAggregatorSum {
+  itemsOrder: Float
+}
+
+type PagesConnection {
+  values: [Pages]
+  groupBy: PagesGroupBy
+  aggregate: PagesAggregator
+}
+
+type PagesConnection_id {
+  key: ID
+  connection: PagesConnection
+}
+
+type PagesConnectionContent {
+  key: String
+  connection: PagesConnection
+}
+
+type PagesConnectionContent_en {
+  key: String
+  connection: PagesConnection
+}
+
+type PagesConnectionCreatedAt {
+  key: DateTime
+  connection: PagesConnection
+}
+
+type PagesConnectionDescription {
+  key: String
+  connection: PagesConnection
+}
+
+type PagesConnectionDescription_en {
+  key: String
+  connection: PagesConnection
+}
+
+type PagesConnectionIcon {
+  key: ID
+  connection: PagesConnection
+}
+
+type PagesConnectionImg {
+  key: ID
+  connection: PagesConnection
+}
+
+type PagesConnectionItemsOrder {
+  key: Int
+  connection: PagesConnection
+}
+
+type PagesConnectionSlug {
+  key: String
+  connection: PagesConnection
+}
+
+type PagesConnectionTitle {
+  key: String
+  connection: PagesConnection
+}
+
+type PagesConnectionTitle_en {
+  key: String
+  connection: PagesConnection
+}
+
+type PagesConnectionUpdatedAt {
+  key: DateTime
+  connection: PagesConnection
+}
+
+type PagesGroupBy {
+  _id: [PagesConnection_id]
+  createdAt: [PagesConnectionCreatedAt]
+  updatedAt: [PagesConnectionUpdatedAt]
+  title: [PagesConnectionTitle]
+  slug: [PagesConnectionSlug]
+  description: [PagesConnectionDescription]
+  icon: [PagesConnectionIcon]
+  img: [PagesConnectionImg]
+  content: [PagesConnectionContent]
+  itemsOrder: [PagesConnectionItemsOrder]
+  title_en: [PagesConnectionTitle_en]
+  description_en: [PagesConnectionDescription_en]
+  content_en: [PagesConnectionContent_en]
+}
+
+input PagesInput {
+  title: String!
+  slug: String!
+  description: String
+  icon: ID
+  img: ID
+  content: String
+  itemsOrder: Int
+  gallery: [ID]
+  title_en: String
+  description_en: String
+  content_en: String
+}
+
+type Pharmacy {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String
+  img: UploadFile
+  pilllink: Pilllink
+}
+
+type PharmacyAggregator {
+  count: Int
+}
+
+type PharmacyConnection {
+  values: [Pharmacy]
+  groupBy: PharmacyGroupBy
+  aggregate: PharmacyAggregator
+}
+
+type PharmacyConnection_id {
+  key: ID
+  connection: PharmacyConnection
+}
+
+type PharmacyConnectionCreatedAt {
+  key: DateTime
+  connection: PharmacyConnection
+}
+
+type PharmacyConnectionImg {
+  key: ID
+  connection: PharmacyConnection
+}
+
+type PharmacyConnectionName {
+  key: String
+  connection: PharmacyConnection
+}
+
+type PharmacyConnectionPilllink {
+  key: ID
+  connection: PharmacyConnection
+}
+
+type PharmacyConnectionUpdatedAt {
+  key: DateTime
+  connection: PharmacyConnection
+}
+
+type PharmacyGroupBy {
+  _id: [PharmacyConnection_id]
+  createdAt: [PharmacyConnectionCreatedAt]
+  updatedAt: [PharmacyConnectionUpdatedAt]
+  name: [PharmacyConnectionName]
+  img: [PharmacyConnectionImg]
+  pilllink: [PharmacyConnectionPilllink]
+}
+
+input PharmacyInput {
+  name: String
+  img: ID
+  pilllink: ID
+}
+
+type Pill {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  title: String!
+  description: String
+  img: UploadFile
+  manufacturer: Manufacturer
+  otherwebsitelink: String
+  title_en: String
+  description_en: String
+  forms(sort: String, limit: Int, start: Int, where: JSON): [Form]
+  Articles(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  pilllink(sort: String, limit: Int, start: Int, where: JSON): [Pilllink]
+}
+
+type PillAggregator {
+  count: Int
+}
+
+type PillConnection {
+  values: [Pill]
+  groupBy: PillGroupBy
+  aggregate: PillAggregator
+}
+
+type PillConnection_id {
+  key: ID
+  connection: PillConnection
+}
+
+type PillConnectionCreatedAt {
+  key: DateTime
+  connection: PillConnection
+}
+
+type PillConnectionDescription {
+  key: String
+  connection: PillConnection
+}
+
+type PillConnectionDescription_en {
+  key: String
+  connection: PillConnection
+}
+
+type PillConnectionImg {
+  key: ID
+  connection: PillConnection
+}
+
+type PillConnectionManufacturer {
+  key: ID
+  connection: PillConnection
+}
+
+type PillConnectionOtherwebsitelink {
+  key: String
+  connection: PillConnection
+}
+
+type PillConnectionTitle {
+  key: String
+  connection: PillConnection
+}
+
+type PillConnectionTitle_en {
+  key: String
+  connection: PillConnection
+}
+
+type PillConnectionUpdatedAt {
+  key: DateTime
+  connection: PillConnection
+}
+
+type PillGroupBy {
+  _id: [PillConnection_id]
+  createdAt: [PillConnectionCreatedAt]
+  updatedAt: [PillConnectionUpdatedAt]
+  title: [PillConnectionTitle]
+  description: [PillConnectionDescription]
+  img: [PillConnectionImg]
+  manufacturer: [PillConnectionManufacturer]
+  otherwebsitelink: [PillConnectionOtherwebsitelink]
+  title_en: [PillConnectionTitle_en]
+  description_en: [PillConnectionDescription_en]
+}
+
+input PillInput {
+  title: String!
+  description: String
+  img: ID
+  manufacturer: ID
+  forms: [ID]
+  Articles: [ID]
+  pilllink: [ID]
+  otherwebsitelink: String
+  title_en: String
+  description_en: String
+}
+
+type Pilllink {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  href: String!
+  pill: Pill
+  pharmacy: Pharmacy
+}
+
+type PilllinkAggregator {
+  count: Int
+}
+
+type PilllinkConnection {
+  values: [Pilllink]
+  groupBy: PilllinkGroupBy
+  aggregate: PilllinkAggregator
+}
+
+type PilllinkConnection_id {
+  key: ID
+  connection: PilllinkConnection
+}
+
+type PilllinkConnectionCreatedAt {
+  key: DateTime
+  connection: PilllinkConnection
+}
+
+type PilllinkConnectionHref {
+  key: String
+  connection: PilllinkConnection
+}
+
+type PilllinkConnectionPharmacy {
+  key: ID
+  connection: PilllinkConnection
+}
+
+type PilllinkConnectionPill {
+  key: ID
+  connection: PilllinkConnection
+}
+
+type PilllinkConnectionUpdatedAt {
+  key: DateTime
+  connection: PilllinkConnection
+}
+
+type PilllinkGroupBy {
+  _id: [PilllinkConnection_id]
+  createdAt: [PilllinkConnectionCreatedAt]
+  updatedAt: [PilllinkConnectionUpdatedAt]
+  href: [PilllinkConnectionHref]
+  pill: [PilllinkConnectionPill]
+  pharmacy: [PilllinkConnectionPharmacy]
+}
+
+input PilllinkInput {
+  href: String!
+  pill: ID
+  pharmacy: ID
+}
+
+type Query {
+  benefit(id: ID!): Benefit
+  benefits(sort: String, limit: Int, start: Int, where: JSON): [Benefit]
+  benefitsConnection(sort: String, limit: Int, start: Int, where: JSON): BenefitConnection
+  contact(id: ID!): Contact
+  contacts(sort: String, limit: Int, start: Int, where: JSON): [Contact]
+  contactsConnection(sort: String, limit: Int, start: Int, where: JSON): ContactConnection
+  form(id: ID!): Form
+  forms(sort: String, limit: Int, start: Int, where: JSON): [Form]
+  formsConnection(sort: String, limit: Int, start: Int, where: JSON): FormConnection
+  locale(id: ID!): Locale
+  locales(sort: String, limit: Int, start: Int, where: JSON): [Locale]
+  localesConnection(sort: String, limit: Int, start: Int, where: JSON): LocaleConnection
+  manufacturer(id: ID!): Manufacturer
+  manufacturers(sort: String, limit: Int, start: Int, where: JSON): [Manufacturer]
+  manufacturersConnection(sort: String, limit: Int, start: Int, where: JSON): ManufacturerConnection
+  page(id: ID!): Pages
+  pages(sort: String, limit: Int, start: Int, where: JSON): [Pages]
+  pagesConnection(sort: String, limit: Int, start: Int, where: JSON): PagesConnection
+  pharmacy(id: ID!): Pharmacy
+  pharmacies(sort: String, limit: Int, start: Int, where: JSON): [Pharmacy]
+  pharmaciesConnection(sort: String, limit: Int, start: Int, where: JSON): PharmacyConnection
+  pill(id: ID!): Pill
+  pills(sort: String, limit: Int, start: Int, where: JSON): [Pill]
+  pillsConnection(sort: String, limit: Int, start: Int, where: JSON): PillConnection
+  pilllink(id: ID!): Pilllink
+  pilllinks(sort: String, limit: Int, start: Int, where: JSON): [Pilllink]
+  pilllinksConnection(sort: String, limit: Int, start: Int, where: JSON): PilllinkConnection
+  vacancy(id: ID!): Vacancy
+  vacancies(sort: String, limit: Int, start: Int, where: JSON): [Vacancy]
+  vacanciesConnection(sort: String, limit: Int, start: Int, where: JSON): VacancyConnection
+  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
+  role(id: ID!): UsersPermissionsRole
+
+  """
+  Retrieve all the existing roles. You can't apply filters on this query.
+  """
+  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]
+  rolesConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsRoleConnection
+  user(id: ID!): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
+  me: UsersPermissionsMe
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+input updateBenefitInput {
+  where: InputID
+  data: BenefitInput
+}
+
+type updateBenefitPayload {
+  benefit: Benefit
+}
+
+input updateContactInput {
+  where: InputID
+  data: ContactInput
+}
+
+type updateContactPayload {
+  contact: Contact
+}
+
+input updateFormInput {
+  where: InputID
+  data: FormInput
+}
+
+type updateFormPayload {
+  form: Form
+}
+
+input updateLocaleInput {
+  where: InputID
+  data: LocaleInput
+}
+
+type updateLocalePayload {
+  locale: Locale
+}
+
+input updateManufacturerInput {
+  where: InputID
+  data: ManufacturerInput
+}
+
+type updateManufacturerPayload {
+  manufacturer: Manufacturer
+}
+
+input updatePagesInput {
+  where: InputID
+  data: PagesInput
+}
+
+type updatePagesPayload {
+  page: Pages
+}
+
+input updatePharmacyInput {
+  where: InputID
+  data: PharmacyInput
+}
+
+type updatePharmacyPayload {
+  pharmacy: Pharmacy
+}
+
+input updatePillInput {
+  where: InputID
+  data: PillInput
+}
+
+input updatePilllinkInput {
+  where: InputID
+  data: PilllinkInput
+}
+
+type updatePilllinkPayload {
+  pilllink: Pilllink
+}
+
+type updatePillPayload {
+  pill: Pill
+}
+
+input updateRoleInput {
+  where: InputID
+  data: RoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateUserInput {
+  where: InputID
+  data: UserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+input updateVacancyInput {
+  where: InputID
+  data: VacancyInput
+}
+
+type updateVacancyPayload {
+  vacancy: Vacancy
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type UploadFile {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  hash: String!
+  sha256: String
+  ext: String
+  mime: String!
+  size: String!
+  url: String!
+  provider: String!
+  public_id: String
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+}
+
+type UploadFileAggregator {
+  count: Int
+}
+
+type UploadFileConnection {
+  values: [UploadFile]
+  groupBy: UploadFileGroupBy
+  aggregate: UploadFileAggregator
+}
+
+type UploadFileConnection_id {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCreatedAt {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionExt {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHash {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionMime {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionName {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionPublic_id {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSha256 {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSize {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUpdatedAt {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileGroupBy {
+  _id: [UploadFileConnection_id]
+  createdAt: [UploadFileConnectionCreatedAt]
+  updatedAt: [UploadFileConnectionUpdatedAt]
+  name: [UploadFileConnectionName]
+  hash: [UploadFileConnectionHash]
+  sha256: [UploadFileConnectionSha256]
+  ext: [UploadFileConnectionExt]
+  mime: [UploadFileConnectionMime]
+  size: [UploadFileConnectionSize]
+  url: [UploadFileConnectionUrl]
+  provider: [UploadFileConnectionProvider]
+  public_id: [UploadFileConnectionPublic_id]
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+type UsersPermissionsMe {
+  _id: ID!
+  username: String!
+  email: String!
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsMeRole
+}
+
+type UsersPermissionsMeRole {
+  _id: ID!
+  name: String!
+  description: String
+  type: String
+}
+
+type UsersPermissionsPermission {
+  _id: ID!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsRole {
+  _id: ID!
+  name: String!
+  description: String
+  type: String
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type UsersPermissionsRoleAggregator {
+  count: Int
+}
+
+type UsersPermissionsRoleConnection {
+  values: [UsersPermissionsRole]
+  groupBy: UsersPermissionsRoleGroupBy
+  aggregate: UsersPermissionsRoleAggregator
+}
+
+type UsersPermissionsRoleConnection_id {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionDescription {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionName {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionType {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleGroupBy {
+  _id: [UsersPermissionsRoleConnection_id]
+  name: [UsersPermissionsRoleConnectionName]
+  description: [UsersPermissionsRoleConnectionDescription]
+  type: [UsersPermissionsRoleConnectionType]
+}
+
+type UsersPermissionsUser {
+  _id: ID!
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsUserAggregator {
+  count: Int
+}
+
+type UsersPermissionsUserConnection {
+  values: [UsersPermissionsUser]
+  groupBy: UsersPermissionsUserGroupBy
+  aggregate: UsersPermissionsUserAggregator
+}
+
+type UsersPermissionsUserConnection_id {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionBlocked {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionEmail {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionProvider {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionRole {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUsername {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserGroupBy {
+  _id: [UsersPermissionsUserConnection_id]
+  username: [UsersPermissionsUserConnectionUsername]
+  email: [UsersPermissionsUserConnectionEmail]
+  provider: [UsersPermissionsUserConnectionProvider]
+  confirmed: [UsersPermissionsUserConnectionConfirmed]
+  blocked: [UsersPermissionsUserConnectionBlocked]
+  role: [UsersPermissionsUserConnectionRole]
+}
+
+type Vacancy {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  title: String!
+  description: String!
+  content: String!
+  city: String!
+  slug: String
+  title_en: String
+  description_en: String
+  content_en: String
+  city_en: String
+}
+
+type VacancyAggregator {
+  count: Int
+}
+
+type VacancyConnection {
+  values: [Vacancy]
+  groupBy: VacancyGroupBy
+  aggregate: VacancyAggregator
+}
+
+type VacancyConnection_id {
+  key: ID
+  connection: VacancyConnection
+}
+
+type VacancyConnectionCity {
+  key: String
+  connection: VacancyConnection
+}
+
+type VacancyConnectionCity_en {
+  key: String
+  connection: VacancyConnection
+}
+
+type VacancyConnectionContent {
+  key: String
+  connection: VacancyConnection
+}
+
+type VacancyConnectionContent_en {
+  key: String
+  connection: VacancyConnection
+}
+
+type VacancyConnectionCreatedAt {
+  key: DateTime
+  connection: VacancyConnection
+}
+
+type VacancyConnectionDescription {
+  key: String
+  connection: VacancyConnection
+}
+
+type VacancyConnectionDescription_en {
+  key: String
+  connection: VacancyConnection
+}
+
+type VacancyConnectionSlug {
+  key: String
+  connection: VacancyConnection
+}
+
+type VacancyConnectionTitle {
+  key: String
+  connection: VacancyConnection
+}
+
+type VacancyConnectionTitle_en {
+  key: String
+  connection: VacancyConnection
+}
+
+type VacancyConnectionUpdatedAt {
+  key: DateTime
+  connection: VacancyConnection
+}
+
+type VacancyGroupBy {
+  _id: [VacancyConnection_id]
+  createdAt: [VacancyConnectionCreatedAt]
+  updatedAt: [VacancyConnectionUpdatedAt]
+  title: [VacancyConnectionTitle]
+  description: [VacancyConnectionDescription]
+  content: [VacancyConnectionContent]
+  city: [VacancyConnectionCity]
+  slug: [VacancyConnectionSlug]
+  title_en: [VacancyConnectionTitle_en]
+  description_en: [VacancyConnectionDescription_en]
+  content_en: [VacancyConnectionContent_en]
+  city_en: [VacancyConnectionCity_en]
+}
+
+input VacancyInput {
+  title: String!
+  description: String!
+  content: String!
+  city: String!
+  slug: String
+  title_en: String
+  description_en: String
+  content_en: String
+  city_en: String
+}

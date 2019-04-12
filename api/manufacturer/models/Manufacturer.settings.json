@@ -1,0 +1,53 @@
+{
+  "connection": "default",
+  "collectionName": "manufacturer",
+  "info": {
+    "name": "manufacturer",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "type": "string"
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "pills": {
+      "collection": "pill",
+      "via": "manufacturer"
+    },
+    "link": {
+      "default": "",
+      "type": "string"
+    },
+    "mapMarkers": {
+      "default": "",
+      "type": "json"
+    },
+    "title_en": {
+      "default": "",
+      "type": "string"
+    },
+    "description_en": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}

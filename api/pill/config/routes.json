@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/pills",
+      "handler": "Pill.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pills/count",
+      "handler": "Pill.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pills/:_id",
+      "handler": "Pill.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/pills",
+      "handler": "Pill.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/pills/:_id",
+      "handler": "Pill.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/pills/:_id",
+      "handler": "Pill.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

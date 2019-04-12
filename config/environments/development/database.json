@@ -1,0 +1,22 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-mongoose",
+      "settings": {
+        "client": "mongo",
+        "srv": false,
+        "uri": "${process.env.DATABASE_URI || ''}",
+        "host": "${process.env.DATABASE_HOST || 'ds135796.mlab.com'}",
+        "port": "${process.env.DATABASE_PORT || '35796'}",
+        "database": "${process.env.DATABASE_NAME || 'cscpharmaen'}",
+        "username": "${process.env.DATABASE_USERNAME || 'cscpharma'}",
+        "password": "${process.env.DATABASE_PASSWORD || 'fuckoff11'}"
+      },
+      "options": {
+        "authenticationDatabase": "${process.env.DATABASE_NAME || 'cscpharmaen'}",
+        "ssl": false
+      }
+    }
+  }
+}

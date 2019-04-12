@@ -1,0 +1,67 @@
+{
+  "connection": "default",
+  "collectionName": "pages",
+  "info": {
+    "name": "pages",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "default": "",
+      "unique": true,
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "default": "",
+      "type": "text"
+    },
+    "icon": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "content": {
+      "default": "",
+      "type": "text"
+    },
+    "itemsOrder": {
+      "default": "",
+      "type": "integer"
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "title_en": {
+      "default": "",
+      "type": "string"
+    },
+    "description_en": {
+      "default": "",
+      "type": "text"
+    },
+    "content_en": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}
