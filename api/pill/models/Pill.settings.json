@@ -54,6 +54,12 @@
     "description_en": {
       "default": "",
       "type": "text"
+    },
+    "instruction": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   }
 }
