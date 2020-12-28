@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "dotenv": "^6.2.0",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.19",
     "strapi": "3.0.0-alpha.18",
     "strapi-email-nodemailer": "^0.2.1",
     "strapi-hook-mongoose": "3.0.0-alpha.18",
